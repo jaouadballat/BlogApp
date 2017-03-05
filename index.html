@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app="blogApp" class="no-js"> 
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+
+  <div ng-view></div>
+
+  <script src="bower_components/jquery/jquery.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="app.js"></script>
+  <script src="home/home.js"></script>
+  <script src="register/register.js"></script>
+  <script src="welcome/welcome.js"></script>
+  <script src="addPost/addPost.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDfu8NPmZD-6h6x2W1D0h9pZXsC1Ooumzw",
+      authDomain: "blogapp-97032.firebaseapp.com",
+      databaseURL: "https://blogapp-97032.firebaseio.com",
+      storageBucket: "blogapp-97032.appspot.com",
+      messagingSenderId: "321435938796"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
+</body>
+</html>

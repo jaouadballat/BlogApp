@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Blog App</title>
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron col-md-6 col-md-offset-3" style="padding-top: 10px; padding-bottom: 25px;">
+			<h3 class="text-center">Blog App Register Page</h3>
+		</div>
+		<form name="formRegister" novalidate role=form>
+			<div class="form-group col-md-6 col-md-offset-3" ng-class="{'has-error': formRegister.email.$invalid && formRegister.email.$touched}">
+		<p class="text-center text-danger" ng-show="showErrorMessage">{{ errorMessage }}</p>
+				<label for="email">Email:</label>
+				<input type="email" class="form-control" ng-model="user.email" name="email" placeholder="Email Address" required>
+				<span class="text-danger" ng-show="formRegister.email.$invalid && formRegister.email.$touched">Enter an valid mail</span>
+			</div>
+				<div class="form-group col-md-6 col-md-offset-3" ng-class="{'has-error': formRegister.password.$invalid && formRegister.password.$touched}">
+					<label for="password">Password:</label>
+					<input type="password" class="form-control" name="password" ng-model="user.password"
+						placeholder="Password" required ng-minlength=6>
+					<span class="text-danger" ng-show="formRegister.password.$error.minlength && formRegister.password.$touched">Password is too short</span>
+				</div>
+				<div class="col-md-6 col-md-offset-3">
+					<label for="singup"><a href="#/home">Sing In</a></label>
+				</div>
+				<div class="form-group col-md-6 col-md-offset-3" ng-class="{'not-allowed': formRegister.$invalid}">
+						<button class="btn btn-md btn-primary btn-block" type="submit" ng-disabled="formRegister.$invalid" ng-click="signUp()">Sing In</button>
+				</div>
+		</form>
+	</div>
+</body>
+</html>
